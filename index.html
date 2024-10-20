@@ -1,54 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Expense Tracker</title>
-  </head>
-  <body>
-    <h2>Expense Tracker</h2>
-
-    <div class="container">
-      <h4>Your Balance</h4>
-      <h1 id="balance">$0.00</h1>
-
-      <div class="inc-exp-container">
-        <div>
-          <h4>Income</h4>
-          <p id="money-plus" class="money plus">+$0.00</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour & Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-hiking"></i> travel.com</a>
+        <nav class="navbar">
+            <div id="nav-close" class="fas fa-times"></div>
+            <a href="#home">Home</a>
+            <a href="#category">Adventures</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
         </div>
-        <div>
-          <h4>Expense</h4>
-          <p id="money-minus" class="money minus">-$0.00</p>
-        </div>
-      </div>
+    </header>
 
-      <h3>History</h3>
-      <ul id="list" class="list">
-        <!-- <li class="minus">
-          Cash <span>-$400</span><button class="delete-btn">x</button>
-        </li> -->
-      </ul>
-
-      <h3>Add new transaction</h3>
-      <form id="form">
-        <div class="form-control">
-          <label for="text">Text</label>
-          <input type="text" id="text" placeholder="Enter text..." />
-        </div>
-        <div class="form-control">
-          <label for="amount"
-            >Amount <br />
-            (negative - expense, positive - income)</label
-          >
-          <input type="number" id="amount" placeholder="Enter amount..." />
-        </div>
-        <button class="btn">Add transaction</button>
-      </form>
+    <div class="search-form">
+        <div id="close-search" class="fas fa-times"></div>
+        <form>
+            <input type="search" placeholder="Search here..." id="search-box">
+            <button type="submit" class="fas fa-search"></button>
+        </form>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <section id="home">
+        <div class="wrapper">
+            <div class="box" style="background: url(images/home1.jpg) no-repeat;">
+                <div class="content">
+                    <span>Never Stop</span>
+                    <h3>Exploring</h3>
+                    <p>Travel.com offers the best deals on India tour packages.</p>
+                    <a href="#category" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="category">
+        <h1>Adventure Ideas!</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/category-1.jpg" alt="Bungee Jumping">
+                <h3>Bungee Jump</h3>
+                <p>Jump from a great height connected to a large elastic cord.</p>
+                <a href="https://en.wikipedia.org/wiki/Bungee_jumping" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <img src="images/category-2.jpg" alt="Zip Lines">
+                <h3>Zip Lines</h3>
+                <p>Ride on a pulley suspended on a cable mounted on a slope.</p>
+                <a href="https://en.wikipedia.org/wiki/Zip_line" class="btn">Read More</a>
+            </div>
+            <div class="box">
+                <img src="images/category-3.jpg" alt="Canoeing">
+                <h3>Canoeing</h3>
+                <p>Paddle a canoe with a single-bladed paddle.</p>
+                <a href="https://en.wikipedia.org/wiki/Canoeing" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages">
+        <h1>Popular Packages</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/img-1.jpg" alt="Manali Package">
+                <h3>Manali Package</h3>
+                <p>Enjoy the beauty of Kullu, Manali, and Shimla.</p>
+                <div class="price">Rs 5,999 - Rs 8,999</div>
+                <a href="#contact" class="btn">Explore Now</a>
+            </div>
+            <div class="box">
+                <img src="images/img-2.jpg" alt="Goa Package">
+                <h3>Goa Package</h3>
+                <p>Experience the nightlife and water sports in Goa.</p>
+                <div class="price">Rs 7,999 - Rs 12,999</div>
+                <a href="#contact" class="btn">Explore Now</a>
+            </div>
+            <div class="box">
+                <img src="images/img-3.jpg" alt="Delhi Package">
+                <h3>Delhi Package</h3>
+                <p>Visit cultural spots and markets in Delhi.</p>
+                <div class="price">Rs 2,999 - Rs 8,999</div>
+                <a href="#contact" class="btn">Explore Now</a>
+            </div>
+            <div class="box">
+                <img src="images/img-4.jpg" alt="Jaipur Package">
+                <h3>Jaipur Package</h3>
+                <p>Explore the forts and palaces of Jaipur.</p>
+                <div class="price">Rs 11,999 - Rs 15,999</div>
+                <a href="#contact" class="btn">Explore Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <form method="post" action="contact_us.php">
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="email" placeholder="Email Address" name="email" required>
+            <input type="text" placeholder="Phone" name="phone">
+            <input type="text" placeholder="Subject" name="subject">
+            <textarea placeholder="Message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div>
+            <h3>Contact Info</h3>
+            <a href="tel:+918115585868">+91 8115585868</a>
+            <a href="mailto:yashsrivastav8115@gmail.com">yashsrivastav8115@gmail.com</a>
+        </div>
+        <div>
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <div>Created by <span>Yash Srivastav</span> | All rights reserved!</div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
