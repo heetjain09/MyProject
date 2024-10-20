@@ -1,120 +1,40 @@
-const balance = document.getElementById('balance');
-const money_plus = document.getElementById('money-plus');
-const money_minus = document.getElementById('money-minus');
-const list = document.getElementById('list');
-const form = document.getElementById('form');
-const text = document.getElementById('text');
-const amount = document.getElementById('amount');
+// Select elements
+const navbar = document.querySelector('.header .navbar');
+const menuBtn = document.getElementById('menu-btn');
+const navClose = document.getElementById('nav-close');
+const searchForm = document.querySelector('.search-form');
+const searchBtn = document.getElementById('search-btn');
+const closeSearch = document.getElementById('close-search');
+const header = document.querySelector('.header');
 
-// const dummyTransactions = [
-//   { id: 1, text: 'Flower', amount: -20 },
-//   { id: 2, text: 'Salary', amount: 300 },
-//   { id: 3, text: 'Book', amount: -10 },
-//   { id: 4, text: 'Camera', amount: 150 }
-// ];
+// Toggle navbar visibility
+menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
 
-const localStorageTransactions = JSON.parse(
-  localStorage.getItem('transactions')
-);
+navClose.addEventListener('click', () => {
+    navbar.classList.remove('active');
+});
 
-let transactions =
-  localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
+// Toggle search form visibility
+searchBtn.addEventListener('click', () => {
+    searchForm.classList.toggle('active');
+});
 
-// Add transaction
-function addTransaction(e) {
-  e.preventDefault();
+closeSearch.addEventListener('click', () => {
+    searchForm.classList.remove('active');
+});
 
-  if (text.value.trim() === '' || amount.value.trim() === '') {
-    alert('Please add a text and amount');
-  } else {
-    const transaction = {
-      id: generateID(),
-      text: text.value,
-      amount: +amount.value
-    };
+// Handle scroll event
+const handleScroll = () => {
+    if (window.scrollY > 0) {
+        header.classList.add('active');
+        navbar.classList.remove('active'); // Hide navbar on scroll
+    } else {
+        header.classList.remove('active');
+    }
+};
 
-    transactions.push(transaction);
-
-    addTransactionDOM(transaction);
-
-    updateValues();
-
-    updateLocalStorage();
-
-    text.value = '';
-    amount.value = '';
-  }
-}
-
-// Generate random ID
-function generateID() {
-  return Math.floor(Math.random() * 100000000);
-}
-
-// Add transactions to DOM list
-function addTransactionDOM(transaction) {
-  // Get sign
-  const sign = transaction.amount < 0 ? '-' : '+';
-
-  const item = document.createElement('li');
-
-  // Add class based on value
-  item.classList.add(transaction.amount < 0 ? 'minus' : 'plus');
-
-  item.innerHTML = `
-    ${transaction.text} <span>${sign}${Math.abs(
-    transaction.amount
-  )}</span> <button class="delete-btn" onclick="removeTransaction(${
-    transaction.id
-  })">x</button>
-  `;
-
-  list.appendChild(item);
-}
-
-// Update the balance, income and expense
-function updateValues() {
-  const amounts = transactions.map(transaction => transaction.amount);
-
-  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-
-  const income = amounts
-    .filter(item => item > 0)
-    .reduce((acc, item) => (acc += item), 0)
-    .toFixed(2);
-
-  const expense = (
-    amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *
-    -1
-  ).toFixed(2);
-
-  balance.innerText = `$${total}`;
-  money_plus.innerText = `$${income}`;
-  money_minus.innerText = `$${expense}`;
-}
-
-// Remove transaction by ID
-function removeTransaction(id) {
-  transactions = transactions.filter(transaction => transaction.id !== id);
-
-  updateLocalStorage();
-
-  init();
-}
-
-// Update local storage transactions
-function updateLocalStorage() {
-  localStorage.setItem('transactions', JSON.stringify(transactions));
-}
-
-// Init app
-function init() {
-  list.innerHTML = '';
-
-  transactions.forEach(addTransactionDOM);
-  updateValues();
-}
-
-init();
-
-form.addEventListener('submit', addTransaction);
+// Event listeners
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);
