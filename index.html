@@ -3,138 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tour & Travel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Trip to Manali</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo"><i class="fas fa-hiking"></i> travel.com</a>
-        <nav class="navbar">
-            <div id="nav-close" class="fas fa-times"></div>
-            <a href="#home">Home</a>
-            <a href="#category">Adventures</a>
-            <a href="#packages">Packages</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="icons">
-            <div id="menu-btn" class="fas fa-bars"></div>
-            <div id="search-btn" class="fas fa-search"></div>
-        </div>
+    <header>
+        <h1>Our Trip to Manali</h1>
     </header>
 
-    <div class="search-form">
-        <div id="close-search" class="fas fa-times"></div>
-        <form>
-            <input type="search" placeholder="Search here..." id="search-box">
-            <button type="submit" class="fas fa-search"></button>
-        </form>
-    </div>
+    <section>
+        <h2>Itinerary</h2>
+        <ul>
+            <li>Day 1: Arrival and local sightseeing</li>
+            <li>Day 2: Adventure activities in Solang Valley</li>
+            <li>Day 3: Visit Rohtang Pass</li>
+            <li>Day 4: Cultural exploration in Old Manali</li>
+        </ul>
+    </section>
 
-    <section id="home">
-        <div class="wrapper">
-            <div class="box" style="background: url(images/home1.jpg) no-repeat;">
-                <div class="content">
-                    <span>Never Stop</span>
-                    <h3>Exploring</h3>
-                    <p>Travel.com offers the best deals on India tour packages.</p>
-                    <a href="#category" class="btn">Get Started</a>
-                </div>
-            </div>
+    <section>
+        <h2>Budget Estimation</h2>
+        <p>Total Estimated Budget: ₹20,000</p>
+    </section>
+
+    <section>
+        <h2>Activities</h2>
+        <button id="showActivities">Show Activities</button>
+        <div id="activityList" style="display: none;">
+            <ul>
+                <li>Trekking</li>
+                <li>Paragliding</li>
+                <li>Visit to Hadimba Temple</li>
+                <li>Shopping in Old Manali</li>
+            </ul>
         </div>
     </section>
 
-    <section id="category">
-        <h1>Adventure Ideas!</h1>
-        <div class="box-container">
-            <div class="box">
-                <img src="images/category-1.jpg" alt="Bungee Jumping">
-                <h3>Bungee Jump</h3>
-                <p>Jump from a great height connected to a large elastic cord.</p>
-                <a href="https://en.wikipedia.org/wiki/Bungee_jumping" class="btn">Read More</a>
-            </div>
-            <div class="box">
-                <img src="images/category-2.jpg" alt="Zip Lines">
-                <h3>Zip Lines</h3>
-                <p>Ride on a pulley suspended on a cable mounted on a slope.</p>
-                <a href="https://en.wikipedia.org/wiki/Zip_line" class="btn">Read More</a>
-            </div>
-            <div class="box">
-                <img src="images/category-3.jpg" alt="Canoeing">
-                <h3>Canoeing</h3>
-                <p>Paddle a canoe with a single-bladed paddle.</p>
-                <a href="https://en.wikipedia.org/wiki/Canoeing" class="btn">Read More</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="packages">
-        <h1>Popular Packages</h1>
-        <div class="box-container">
-            <div class="box">
-                <img src="images/img-1.jpg" alt="Manali Package">
-                <h3>Manali Package</h3>
-                <p>Enjoy the beauty of Kullu, Manali, and Shimla.</p>
-                <div class="price">Rs 5,999 - Rs 8,999</div>
-                <a href="#contact" class="btn">Explore Now</a>
-            </div>
-            <div class="box">
-                <img src="images/img-2.jpg" alt="Goa Package">
-                <h3>Goa Package</h3>
-                <p>Experience the nightlife and water sports in Goa.</p>
-                <div class="price">Rs 7,999 - Rs 12,999</div>
-                <a href="#contact" class="btn">Explore Now</a>
-            </div>
-            <div class="box">
-                <img src="images/img-3.jpg" alt="Delhi Package">
-                <h3>Delhi Package</h3>
-                <p>Visit cultural spots and markets in Delhi.</p>
-                <div class="price">Rs 2,999 - Rs 8,999</div>
-                <a href="#contact" class="btn">Explore Now</a>
-            </div>
-            <div class="box">
-                <img src="images/img-4.jpg" alt="Jaipur Package">
-                <h3>Jaipur Package</h3>
-                <p>Explore the forts and palaces of Jaipur.</p>
-                <div class="price">Rs 11,999 - Rs 15,999</div>
-                <a href="#contact" class="btn">Explore Now</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h1>Contact Us</h1>
-        <form method="post" action="contact_us.php">
-            <input type="text" placeholder="Name" name="name" required>
-            <input type="email" placeholder="Email Address" name="email" required>
-            <input type="text" placeholder="Phone" name="phone">
-            <input type="text" placeholder="Subject" name="subject">
-            <textarea placeholder="Message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <section>
+        <h2>Memories from Manali</h2>
+        <img src="URL_TO_MANALI1" alt="Scenic View of Manali" class="responsive">
+        <img src="URL_TO_MANALI2" alt="Adventure in Solang Valley" class="responsive">
+        <img src="URL_TO_MANALI3" alt="Local Culture in Manali" class="responsive">
+        <img src="URL_TO_MANALI4" alt="Local Cuisine in Manali" class="responsive">
     </section>
 
     <footer>
-        <div>
-            <h3>Quick Links</h3>
-            <a href="#home">Home</a>
-            <a href="#packages">Packages</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div>
-            <h3>Contact Info</h3>
-            <a href="tel:+918115585868">+91 8115585868</a>
-            <a href="mailto:yashsrivastav8115@gmail.com">yashsrivastav8115@gmail.com</a>
-        </div>
-        <div>
-            <h3>Follow Us</h3>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-        </div>
-        <div>Created by <span>Yash Srivastav</span> | All rights reserved!</div>
+        <p>&copy; 2024 Our Manali Adventure</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
